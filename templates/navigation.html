@@ -28,8 +28,11 @@
         .nav a:hover {
             text-decoration: underline;
         }
+        .content {
+            margin-top: 5rem;
+        }
         form {
-            margin: 20px auto;
+            margin: 5rem auto;
             padding: 20px;
             max-width: 400px;
             background: #f4f4f4;
@@ -62,7 +65,7 @@
     </div>
 
     {% if form %}
-    <form action="/calculate/" method="get" class="content">
+    <form action="/calculate/" method="get">
         <label for="a">Enter a:</label>
         <input type="number" name="a" id="a" required>
 
