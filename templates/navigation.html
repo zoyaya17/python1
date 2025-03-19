@@ -28,21 +28,60 @@
         .nav a:hover {
             text-decoration: underline;
         }
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+            background: #f4f4f4;
+            border-radius: 10px;
+        }
+        input, select, button {
+            font-size: 18px;
+            margin: 5px;
+            padding: 10px;
+            width: 90%;
+        }
+        button {
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
     </style>
 </head>
 <body>
 
     <div class="nav">
         <a href="/">Home</a>
-        <a href="/sum/?a=5&b=10">Sum</a>
-        <a href="/sub/?a=10&b=3">Subtraction</a>
-        <a href="/mul/?a=4&b=7">Multiplication</a>
-        <a href="/div/?a=10&b=2">Division</a>
+        <a href="/calculate/">Calculator</a>
         <a href="/col/">Random Color</a>
         <a href="/doc/">README.md</a>
     </div>
 
-    <div>
+    {% if form %}
+    <form action="/calculate/" method="get">
+        <label for="a">Enter a:</label>
+        <input type="number" name="a" id="a" required>
+
+        <label for="b">Enter b:</label>
+        <input type="number" name="b" id="b" required>
+
+        <label for="operation">Operation:</label>
+        <select name="operation" id="operation">
+            <option value="sum">Addition (+)</option>
+            <option value="sub">Subtraction (-)</option>
+            <option value="mul">Multiplication (×)</option>
+            <option value="div">Division (÷)</option>
+        </select>
+
+        <button type="submit">Calculate</button>
+    </form>
+    {% endif %}
+
+    <div class="content">
         {{ content|safe }}
     </div>
 
