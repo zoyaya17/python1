@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .nav {
+            margin-bottom: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            margin: 10px;
+            font-size: 20px;
+            color: blue;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/sum/?a=5&b=10">Sum</a>
+        <a href="/sub/?a=10&b=3">Subtraction</a>
+        <a href="/mul/?a=4&b=7">Multiplication</a>
+        <a href="/div/?a=10&b=2">Division</a>
+        <a href="/col/">Random Color</a>
+        <a href="/doc/">README.md</a>
+    </div>
+
+    <div>
+        {{ content|safe }}
+    </div>
+
+</body>
+</html>
